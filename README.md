@@ -1,0 +1,2 @@
+# mancala
+ An online game.
