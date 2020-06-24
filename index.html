@@ -1,0 +1,246 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="static/css/Semantic-UI-CSS-master/semantic.min.css">
+    <link rel="stylesheet" href="static/css/mancala_main.css">
+
+    <script src="static/lib/jquery.min.js"></script>
+    <script src="static/js/mancala_main.js"></script>
+    <script src="static/css/Semantic-UI-CSS-master/semantic.min.js"></script>
+	<title>Mancala</title>
+</head>
+
+
+<body>
+    <!-- welcome page -->
+    <div id="welcome" class="ui center aligned container">
+        <div id="top">
+            <h1 id="title">Mancala</h1>
+        </div>
+        <div id="stage">
+            <div class="ui huge vertical buttons" id="welcome_buttons">                
+                <button class="ui inverted button" id="to_start">Start the game!</button>
+                <!-- <p></p> -->
+                <button class="ui inverted button" id="to_options">Options</button>
+                <!-- <p></p> -->
+                <button class="ui inverted button" id="to_rules">How to play</button>
+            </div>
+        </div>
+        <div id="bottom">
+            <!-- null -->
+        </div>
+    </div>
+
+    <!-- options page -->
+    <div id="options" class="ui center aligned container">
+        <div id="top">
+            <h1 id="title">Mancala</h1>
+            <h2>Options</h2>
+            <p><i>**Currently only local players mode is available.**</i></p>
+        </div>
+        <div id="stage">
+            <div class="ui two huge buttons" id="options_buttons">
+                <button class="ui inverted button" id="ai_off">Local players</button>
+                <div class="or"></div>
+                <button class="ui inverted button" id="ai_on">vs CPU</button>
+            </div>
+        </div>
+        <div id="bottom">          
+            <button class="ui huge inverted button" id="options_to_welcome">OK</button>
+        </div>
+    </div>
+
+    <!-- rules page -->
+    <div id="rules" class="ui center aligned container">
+        <div id="top">
+            <h1 id="title">Mancala</h1>
+            <h2>Rules</h2>
+        </div>
+        <div id="stage">            
+            <div class="ui inverted top attached secondary pointing huge menu">
+                <a class="item active" data-tab="basic_rules">Basic Rules</a>
+                <a class="item" data-tab="special_rules">Special Rules</a>
+                <a class="item" data-tab="end_the_game">End the Game</a>
+            </div>
+
+            <div id="ref">
+                <p><br>
+                    <i>see <a href=
+                    "https://www.scholastic.com/content/dam/teachers/blogs/alycia-zimmerman/migrated-files/mancala_rules.pdf">
+                    this page</a> and <a href="https://en.wikipedia.org/wiki/Mancala">wiki</a> for details
+                    </i>
+                </p>
+            </div>
+
+            <div class="ui bottom attached tab active" data-tab="basic_rules">
+                <ul>
+                    <li>On a turn, a player picks up all the seeds in one pit and "sows" them to the right 
+                        (counter-clockwise), placing one seed in each of the pits along the way.
+                    </li>
+                    <li>If you come to your store, then add a seed to your store and continue. 
+                        You may end up putting seeds in your opponent's pits along the way. 
+                    </li>
+                    <li>
+                        Play alternates back and forth, with opponents picking up the seeds in one of their pits and
+                        distributing them one at a time into the pits on the right, 
+                        beginning in the pit immediately to the right.
+                    </li>
+                </ul>
+            </div>
+            <div class="ui bottom attached tab" data-tab="special_rules">
+                <ul>
+                    <li>
+                        When the last seed in your hand lands in your store, <i>take another turn</i>.
+                    </li>
+                    <li>
+                        <i>Capturing</i>: 
+                        <br>
+                        When the last seed in your hand lands in one of your own pits, 
+                        if that pit had been empty you get to keep all of the seeds 
+                        in your opponents pit on the opposite side. 
+                        <br>
+                        Put those captured seeds, as well as the last seed that you just played on your side, into the store.
+                    </li>
+                </ul>
+            </div>
+            <div class="ui bottom attached tab" data-tab="end_the_game">
+                <ul>
+                    <li>
+                        The game is over when one player's pits are completely empty. 
+                    </li>
+                    <li>
+                        <i>The other player takes the seeds remaining in her pits and puts those seeds in her store.</i>
+                    </li>
+                    <li>
+                        Count up the seeds. Whoever has the most seeds wins.
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div id="bottom">          
+            <button class="ui huge inverted button" id="rules_to_welcome">Menu</button>
+        </div>
+    </div>
+
+    <!-- game start -->
+    <div id="game" class="ui container">
+        <div id="top">
+            <h1 id="title">Mancala</h1>
+        </div>
+        <div id="stage">
+            <div class="ui middle aligned ten column centered grid" id="game_ground">
+            <h2 id="p2">Player 2</h2>
+            <div class="stretched row">
+                <div class="two wide column">
+                    <p id="ele14">0</p>
+                    <button id="ele_button14" class="ele_side">14</button>
+                    <p style="color: #2d2d2d;">filling</p>
+                </div>
+                
+                <div class="column">
+                    <p id="ele13">4</p>
+                    <button id="ele_button13" class="ele_row">13</button>
+
+                    <p></p>
+                    
+                    <button id="ele_button1" class="ele_row">1</button>
+                    <p id="ele1">4</p>
+                </div>
+                <div class="column">
+                    <p id="ele12">4</p>
+                    <button id="ele_button12" class="ele_row">12</button>
+
+                    <p></p>
+                    
+                    <button id="ele_button2" class="ele_row">2</button>
+                    <p id="ele2">4</p>
+                </div>
+                <div class="column">
+                    <p id="ele11">4</p>
+                    <button id="ele_button11" class="ele_row">11</button>
+
+                    <p></p>
+                    
+                    <button id="ele_button3" class="ele_row">3</button>
+                    <p id="ele3">4</p>
+                </div>
+                <div class="column">
+                    <p id="ele10">4</p>
+                    <button id="ele_button10" class="ele_row">10</button>
+
+                    <p></p>
+                    
+                    <button id="ele_button4" class="ele_row">4</button>
+                    <p id="ele4">4</p>
+                </div>
+                <div class="column">
+                    <p id="ele9">4</p>
+                    <button id="ele_button9" class="ele_row">9</button>
+
+                    <p></p>
+                    
+                    <button id="ele_button5" class="ele_row">5</button>
+                    <p id="ele5">4</p>
+                </div>
+                <div class="column">
+                    <p id="ele8">4</p>
+                    <button id="ele_button8" class="ele_row">8</button>
+
+                    <p></p>
+                    
+                    <button id="ele_button6" class="ele_row">6</button>
+                    <p id="ele6">4</p>
+                </div>
+
+                <div class="two wide column">
+                    <p style="color: #2d2d2d;">filling</p>
+                    <button id="ele_button7" class="ele_side">7</button>
+                    <p id="ele7">0</p>
+                </div>
+            </div>
+            <h2 id="p1">Player 1</h2>
+            </div>
+        </div>
+        <div id="bottom">
+
+        </div>
+    </div>
+
+    <!-- game end -->
+    <div id="end" class="ui center aligned container">
+        <div id="top">
+            <h1 id="title">Mancala</h1>
+            <h2>Results</h2>
+        </div>
+        <div id="stage">
+            <div>
+                <p><br></p>
+                <p id="win">who wins</p>
+            </div>
+            <div id="results_both">
+                <div class="ui middle aligned two column centered grid">
+                    <div class="row">
+                        <div class="column">
+                            <p>Player 1:</p>
+                            <p id="results1">results p1</p>
+                        </div>
+                        <div class="column">
+                            <p>Player 2:</p>
+                            <p id="results2">results p2</p>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <div id="bottom">            
+            <button class="ui huge inverted button" id="end_to_welcome">Menu</button>
+        </div>
+    </div>
+
+    
+
+</body>
+</html>

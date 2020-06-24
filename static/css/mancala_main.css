@@ -1,0 +1,114 @@
+/* overall setting */
+body {
+    background-color: #2d2d2d;
+    color: white;
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+p {
+    margin-top: 20px; /*= font-size*/
+    margin-bottom: 20px; /*= font-size*/
+    text-align: center;
+}
+
+#top {
+    margin-top: 5%;
+    height: 20%;
+}
+
+#stage {
+    height: 50%;
+}
+
+#bottom {
+    height: 20%;
+}
+
+/* welcome page */
+#welcome_buttons {
+    margin-top: 10%;
+}
+
+/* options page */
+#options_buttons {
+    margin-top: 10%;
+}
+
+#ai_on {
+    transition-duration: 0.4s;
+}
+
+#ai_on:hover {
+    background-color: #2d2d2d;
+    color: white;
+}
+
+#ai_off {
+    transition-duration: 0.4s;
+}
+
+/* rules page */
+li {
+    text-align: left;
+    font-size: 16px;
+}
+
+#ref p {
+    text-align: left;
+    font-size: 16px;
+}
+
+/* end page */
+#results_both {
+    margin-top: 10%;
+}
+
+/* game page */
+.ele_side {
+    background-color: #FFFFFF; 
+    color: #2d2d2d;
+    border: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    text-align: center;
+    border-radius: 8px;
+    height: 160px; /*= 8 * font-size = 2 * ele_row.height + 2 * p.margin-top */
+    width: 100%;
+}
+
+.ele_side:hover {
+    background-color: #808080;
+}
+
+.ele_side:focus {
+    outline: none;
+}
+
+.ele_row {
+    background-color: #FFFFFF;
+    color: #2d2d2d;
+    border: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    text-align: center;
+    border-radius: 8px;
+    height: 60px; /*= 3 * font-size*/
+}
+
+.ele_row:hover {
+    background-color: #808080; 
+}
+
+.ele_row:focus {
+    outline: none;
+}
