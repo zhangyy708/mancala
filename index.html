@@ -17,15 +17,23 @@
     <!-- welcome page -->
     <div id="welcome" class="ui center aligned container">
         <div id="top">
-            <h1 id="title">Mancala</h1>
+            <h1 class="title" id="title_en">Mancala</h1>
+            <h1 class="title" id="title_cn">播棋</h1>
         </div>
         <div id="stage">
-            <div class="ui huge vertical buttons" id="welcome_buttons">                
-                <button class="ui inverted button" id="to_start">Start the game!</button>
+            <div class="ui huge vertical buttons" id="welcome_buttons_en">                
+                <button class="ui inverted button" id="to_start_en">Start the game!</button>
                 <!-- <p></p> -->
-                <button class="ui inverted button" id="to_options">Options</button>
+                <button class="ui inverted button" id="to_options_en">Options</button>
                 <!-- <p></p> -->
-                <button class="ui inverted button" id="to_rules">How to play</button>
+                <button class="ui inverted button" id="to_rules_en">How to play</button>
+            </div>
+            <div class="ui huge vertical buttons" id="welcome_buttons_cn">                
+                <button class="ui inverted button" id="to_start_cn">开始游戏！</button>
+                <!-- <p></p> -->
+                <button class="ui inverted button" id="to_options_cn">选项</button>
+                <!-- <p></p> -->
+                <button class="ui inverted button" id="to_rules_cn">游戏规则</button>
             </div>
         </div>
         <div id="bottom">
@@ -36,36 +44,54 @@
     <!-- options page -->
     <div id="options" class="ui center aligned container">
         <div id="top">
-            <h1 id="title">Mancala</h1>
-            <h2>Options</h2>
-            <p><i>**Currently only local players mode is available.**</i></p>
+            <h1 class="title" id="title_options_en">Mancala</h1>
+            <h1 class="title" id="title_options_cn">播棋</h1>
+            <h2 class="sub" id="sub_options_en">Options</h2>
+            <h2 class="sub" id="sub_options_cn">选项</h2>
+            <p class="des" id="des_options_en"><i>**Currently only local players mode is available.**</i></p>
+            <p class="des" id="des_options_cn"><i>**目前仅有本地模式**</i></p>
         </div>
         <div id="stage">
-            <div class="ui two huge buttons" id="options_buttons">
-                <button class="ui inverted button" id="ai_off">Local players</button>
+            <div class="ui two large buttons" id="options_ai">
+                <button class="ui inverted button" id="ai_off_en">Local players</button>
+                <button class="ui inverted button" id="ai_off_cn">本地</button>
                 <div class="or"></div>
                 <button class="ui inverted button" id="ai_on">vs CPU</button>
             </div>
+            
+            <div class="ui two large buttons" id="options_lan">
+                <button class="ui inverted button" id="en">English</button>
+                <div class="or"></div>
+                <button class="ui inverted button" id="cn">简体中文</button>
+            </div>
         </div>
         <div id="bottom">          
-            <button class="ui huge inverted button" id="options_to_welcome">OK</button>
+            <button class="ui huge inverted button" id="options_to_welcome_en">OK</button>
+            <button class="ui huge inverted button" id="options_to_welcome_cn">确定</button>
         </div>
-    </div>
+    </div>   
 
     <!-- rules page -->
     <div id="rules" class="ui center aligned container">
         <div id="top">
-            <h1 id="title">Mancala</h1>
-            <h2>Rules</h2>
+            <h1 class="title" id="title_rules_en">Mancala</h1>
+            <h1 class="title" id="title_rules_cn">播棋</h1>
+            <h2 class="sub" id="sub_rules_en">Rules</h2>
+            <h2 class="sub" id="sub_rules_cn">游戏规则</h2>
         </div>
         <div id="stage">            
-            <div class="ui inverted top attached secondary pointing huge menu">
-                <a class="item active" data-tab="basic_rules">Basic Rules</a>
-                <a class="item" data-tab="special_rules">Special Rules</a>
-                <a class="item" data-tab="end_the_game">End the Game</a>
+            <div class="ui inverted top attached secondary pointing huge menu" id="tab_en">
+                <a class="item active" data-tab="basic_rules_en">Basic Rules</a>
+                <a class="item" data-tab="special_rules_en">Special Rules</a>
+                <a class="item" data-tab="end_the_game_en">End the Game</a>
+            </div>                       
+            <div class="ui inverted top attached secondary pointing huge menu" id="tab_cn">
+                <a class="item active" data-tab="basic_rules_cn">基本规则</a>
+                <a class="item" data-tab="special_rules_cn">特殊规则</a>
+                <a class="item" data-tab="end_the_game_cn">结束规则</a>
             </div>
 
-            <div id="ref">
+            <div id="ref_en">
                 <p><br>
                     <i>see <a href=
                     "https://www.scholastic.com/content/dam/teachers/blogs/alycia-zimmerman/migrated-files/mancala_rules.pdf">
@@ -73,8 +99,16 @@
                     </i>
                 </p>
             </div>
+            <div id="ref_cn">
+                <p><br>
+                    <i>参考<a href=
+                    "https://www.scholastic.com/content/dam/teachers/blogs/alycia-zimmerman/migrated-files/mancala_rules.pdf">
+                    此文件</a>和<a href="https://en.wikipedia.org/wiki/Mancala">维基百科</a>
+                    </i>
+                </p>
+            </div>
 
-            <div class="ui bottom attached tab active" data-tab="basic_rules">
+            <div class="ui bottom attached tab active" data-tab="basic_rules_en" id="basic_rules_en">
                 <ul>
                     <li>On a turn, a player picks up all the seeds in one pit and "sows" them to the right 
                         (counter-clockwise), placing one seed in each of the pits along the way.
@@ -89,7 +123,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="ui bottom attached tab" data-tab="special_rules">
+            <div class="ui bottom attached tab" data-tab="special_rules_en" id="special_rules_en">
                 <ul>
                     <li>
                         When the last seed in your hand lands in your store, <i>take another turn</i>.
@@ -105,7 +139,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="ui bottom attached tab" data-tab="end_the_game">
+            <div class="ui bottom attached tab" data-tab="end_the_game_en" id="end_the_game_en">
                 <ul>
                     <li>
                         The game is over when one player's pits are completely empty. 
@@ -119,16 +153,62 @@
                 </ul>
             </div>
 
+            <div class="ui bottom attached tab active" data-tab="basic_rules_cn" id="basic_rules_cn">
+                <ul>
+                    <li>
+                        每轮游戏中，一名玩家拿出自己的某一格里的所有石子，向右（逆时针）依次“播种”，
+                        把石子逐一放入沿途的格子中。
+                    </li>
+                    <li>
+                        到达自己的记分格时，放入一枚石子然后继续。
+                        你可能在沿途把石子放入对方玩家的格子（除对方的记分格以外）。
+                    </li>
+                    <li>
+                        玩家双方交替操作，对方玩家同样拿出其某一格里的所有石子，向其右方（逆时针）依次放入石子。
+                    </li>
+                </ul>
+            </div>
+            <div class="ui bottom attached tab" data-tab="special_rules_cn" id="special_rules_cn">
+                <ul>
+                    <li>
+                        如果在某一轮中，你的最后一枚石子落入自己的记分格，那么<i>你获得一轮额外机会</i>。
+                    </li>
+                    <li>
+                        <i>取子</i>: 
+                        <br>
+                        如果在某一轮中，你的最后一枚石子落入自己的某一格里，并且该格之前是空的，
+                        那么你可以取走位于该格对面的格子里的所有石子。
+                        <br>
+                        把取到的石子和你刚才的最后一枚石子放入自己的记分格。
+                    </li>
+                </ul>
+            </div>
+            <div class="ui bottom attached tab" data-tab="end_the_game_cn" id="end_the_game_cn">
+                <ul>
+                    <li>
+                        如果某名玩家的所有格子都没有石子了，那么游戏结束。
+                    </li>
+                    <li>
+                        <i>此时，另一名玩家把自己格子里的所有石子都放入自己的记分格。</i>
+                    </li>
+                    <li>
+                        计数每个记分格里的石子。石子数多的获胜。
+                    </li>
+                </ul>
+            </div>
+
         </div>
         <div id="bottom">          
-            <button class="ui huge inverted button" id="rules_to_welcome">Menu</button>
+            <button class="ui huge inverted button" id="rules_to_welcome_en">Menu</button>
+            <button class="ui huge inverted button" id="rules_to_welcome_cn">回到菜单</button>
         </div>
     </div>
 
     <!-- game start -->
     <div id="game" class="ui container">
         <div id="top">
-            <h1 id="title">Mancala</h1>
+            <h1 id="title_game_en">Mancala</h1>
+            <h1 id="title_game_cn">播棋</h1>
         </div>
         <div id="stage">
             <div class="ui middle aligned ten column centered grid" id="game_ground">
@@ -212,8 +292,10 @@
     <!-- game end -->
     <div id="end" class="ui center aligned container">
         <div id="top">
-            <h1 id="title">Mancala</h1>
-            <h2>Results</h2>
+            <h1 class="title" id="title_rst_en">Mancala</h1>
+            <h1 class="title" id="title_rst_cn">播棋</h1>
+            <h2 class="sub" id="sub_rst_en">Results</h2>
+            <h2 class="sub" id="sub_rst_cn">结果</h2>
         </div>
         <div id="stage">
             <div>
@@ -224,11 +306,13 @@
                 <div class="ui middle aligned two column centered grid">
                     <div class="row">
                         <div class="column">
-                            <p>Player 1:</p>
+                            <p class="ply" id="p1_en">Player 1:</p>
+                            <p class="ply" id="p1_cn">玩家1：</p>
                             <p id="results1">results p1</p>
                         </div>
                         <div class="column">
-                            <p>Player 2:</p>
+                            <p class="ply" id="p2_en">Player 2:</p>
+                            <p class="ply" id="p2_cn">玩家2：</p>
                             <p id="results2">results p2</p>
                         </div>
                     </div>
@@ -236,11 +320,10 @@
             </div>
         </div>
         <div id="bottom">            
-            <button class="ui huge inverted button" id="end_to_welcome">Menu</button>
+            <button class="ui huge inverted button" id="end_to_welcome_en">Menu</button>
+            <button class="ui huge inverted button" id="end_to_welcome_cn">回到菜单</button>
         </div>
-    </div>
-
-    
+    </div>    
 
 </body>
 </html>
